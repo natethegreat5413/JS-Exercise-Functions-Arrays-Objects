@@ -142,9 +142,13 @@ function getName(makePersonObject) {
  * passing in [ 'orange', 'grape', 'apple', 'banana', 'mango' ] as the argument,
  * the returned value should be: 2.
 */
-function appleIndex(/* code here */) {
-  /* code here */
-}
+function appleIndex(array) {
+  for(let i = 0; i < array.length; i++){
+    if(array[i] === 'apple'){
+      return i;
+      }
+    }  
+  }
 
 /**
  * ### Challenge `isItAnApple`
@@ -161,8 +165,16 @@ function appleIndex(/* code here */) {
  * passing in [ 'orange', 'apple', 'banana', 'apples', 'apple', 'mango' ] as the argument,
  * the returned value should be: [ false, true, false, false, true, false ].
 */
-function isItAnApple(/* code here */) {
-  /* code here */
+function isItAnApple(array) {
+  const newArray = [];
+  for(let i = 0; i < array.length; i++){
+    if(array[i] === 'apple'){
+      newArray.push(true);
+    }else{
+      newArray.push(false);
+    }
+  }
+  return newArray;
 }
 
 
@@ -220,8 +232,10 @@ function get3rdCar(inventory) {
  * it will return `This is a Lincoln Navigator`.
 */
 function getCarInfoByIndex(inventory, index) {
-  /* code here */
-}
+  const car = inventory[0];
+  return `this is a ${car.car_make} ${car.car_model}`
+  }
+
 
 /**
  * ### Challenge `getLastCarInfo`
@@ -234,8 +248,9 @@ function getCarInfoByIndex(inventory, index) {
  * For example, if getLastCarInfo is invoked passing the inventory inside /data/inventory.js,
  * it will return `This is a Lincoln Town Car`.
 */
-function getLastCarInfo(/* code here */) {
-  /* code here */
+function getLastCarInfo(inventory) {
+  const vehicle = inventory[inventory.length - 1];
+  return `This is a ${vehicle.car_make} ${vehicle.car_model}`
 }
 
 /**
